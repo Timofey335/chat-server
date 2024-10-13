@@ -1,0 +1,3 @@
+package interceptor
+
+func AuthorizarionCheck()
