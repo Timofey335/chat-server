@@ -34,10 +34,10 @@ func AuthorizarionCheck(ctx context.Context, req interface{}, info *grpc.UnarySe
 	cl := descAccess.NewAccessV1Client(conn)
 
 	_, err = cl.Check(ctx, &descAccess.CheckRequest{
-		EndpointAddress: "/auth_v1.Auth_v1/GetUser",
+		EndpointAddress: "/chat_server_v1.Chat_server_v1/CreateChat",
 	})
 	if err != nil {
-		log.Fatal(err.Error())
+		return nil, err
 	}
 
 	fmt.Println("Access granted")
